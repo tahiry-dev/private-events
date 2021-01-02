@@ -1,7 +1,7 @@
-<% if @user.errors.any? %>
-   The form contains <%= pluralize(@user.errors.count, "error")%>
+<% if obj.errors.any? %>
+   The form contains <%= pluralize(obj.errors.count, "error")%>
    <ul>
-    <% @user.errors.full_messages.each do |msg| %>
+    <% obj.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
     <% end %>
    </ul>

@@ -12,7 +12,6 @@ class SessionsController < ApplicationController
       else
        flash.now[:danger] = "Invalid name, Please try again"
        render :new
-
       end
     end
     

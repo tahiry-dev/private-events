@@ -1,6 +1,9 @@
 <% if logged_in? %>
   <h3>Welcome <%= @user.name %></h3>
   <%= link_to 'Logout', logout_path, method: :delete %>
+  <p>here are the <%= link_to 'list of all events', events_path %></p>
+  <p>You can create your event <%= link_to 'Here', new_event_path %>
+
 <% else %>
     <p>Please create an account <%= link_to 'Here', new_user_path %> first</p>
 <% end %>

@@ -1,0 +1,7 @@
+<h3>Create your event here</h3>
+<%= form_with(model: @event, local: true) do |f| %>
+    <%= render 'shared/errors', obj: @event %>
+    <p><%= f.label :description %></p>
+    <p><%= f.text_field :description, id: :description, placeholder: "describe your event" %></p>
+    <p><%= f.submit 'Create' %></p>
+<% end %>
