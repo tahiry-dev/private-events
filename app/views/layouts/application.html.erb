@@ -10,9 +10,13 @@
   </head>
 
   <body>
+    <%= link_to 'Home', events_path %><br><br>
     <% flash.each do | type, message | %>
       <%= message %>
     <% end %>
     <%= yield %>
+    <% if logged_in? %>
+      <h6><%= link_to 'Logout', logout_path, method: :delete %></h6>
+    <% end %>
   </body>
 </html>

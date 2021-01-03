@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 
     def destroy
         log_out
-        redirect_to login_path
         flash[:notice] = "Thanks for your visit"
+        redirect_to events_path
     end
 end

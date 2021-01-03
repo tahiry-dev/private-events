@@ -1,1 +1,12 @@
-<h3>Should lists all events created by this users later</h3>
+ <% if @event.attendees.empty?%>
+    <p>Currently, your events has no followers</p>
+ <% else %>
+    <p>Here are your followers:</p>
+    <% @event.attendees.each do |attendee| %>
+      <ul>
+       <li><%=attendee.name %></li>
+      </ul>
+    <% end %>
+ <% end %>
+
+ <p>Create another event <%= link_to 'here', new_event_path %></p> 

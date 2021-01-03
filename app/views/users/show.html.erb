@@ -1,9 +1,34 @@
 <% if logged_in? %>
   <h3>Welcome <%= @user.name %></h3>
-  <%= link_to 'Logout', logout_path, method: :delete %>
-  <p>here are the <%= link_to 'list of all events', events_path %></p>
-  <p>You can create your event <%= link_to 'Here', new_event_path %>
+  <% if @user.created_events.empty? %>
+    <p>currently, there are no event you created</p>
+  <% else %>
+      <p>here are the list of events you have created</p>
+      <% if @upcoming_events.empty? %>
+        <p>There are no Future events Yet</p>
+      <% else %>
+          <em>Future Events:</em>
+          <ul>
+            <% @upcoming_events.each do | future_eve | %>
+              <li><%= future_eve.title %></li>
+            <% end %>
+          </ul>
+      <% end %>
 
+     <% if @previous_events.empty? %>
+        <p>There are no past events</p>
+      <% else %>
+          <em>Past Events:</em>
+          <ul>
+            <% @previous_events.each do | past_eve | %>
+              <li><%= past_eve.title %></li>
+            <% end %>
+          </ul>
+      <% end %>
+       
+  <% end %>
+
+  <p>You can have a look at other events <%= link_to 'Here', events_path %><br>
 <% else %>
     <p>Please create an account <%= link_to 'Here', new_user_path %> first</p>
 <% end %>
