@@ -1,0 +1,10 @@
+<h3>Only your name is needed to create account</h3>
+
+<%= form_with(model: @user, local: true) do |f| %>
+<%= render 'shared/errors', obj: @user %>
+<p>
+  <%= f.label :name %><br><br>
+  <%= f.text_field :name, id: :name, placeholder: "Your name here" %><br><br>
+  <%= f.submit "New Account" %>
+</p>
+<% end %>

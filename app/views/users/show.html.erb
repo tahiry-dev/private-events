@@ -1,0 +1,38 @@
+<% if logged_in? %>
+  <h3>Welcome <%= @user.name %></h3>
+  <% if @user.created_events.empty? %>
+    <p>currently, there are no event you created</p>
+  <% else %>
+      <p>here are the list of events you have created</p>
+      <% if @upcoming_events.empty? %>
+        <p>**** There are no Future events Yet ****</p>
+      <% else %>
+          <em>Future Events:</em>
+          <ul>
+            <% @upcoming_events.each do | future_eve | %>
+              <li><%= future_eve.title %></li>
+            <% end %>
+          </ul>
+      <% end %>
+        <em>Past Events:</em>
+        <ul>
+          <% @previous_events.each do | past_eve | %>
+            <li><%= past_eve.title %></li>
+          <% end %>
+        </ul>
+       
+  <% end %>
+
+  <% unless @user.attended_events.empty? %>
+    <p>Here are the events you are attending:</p>
+    <% @user.attended_events.each do |event| %>
+      <ul>
+        <li><%= event.title %></li>
+      </ul>
+    <% end %>
+  <% end %>
+  
+  <em>You can have a look at all events <%= link_to 'Here', events_path %></em><br>
+<% else %>
+    <p>Please create an account <%= link_to 'Here', new_user_path %> first</p>
+<% end %>

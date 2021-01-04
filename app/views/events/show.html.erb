@@ -1,0 +1,12 @@
+<p><%= @event.description %></p>
+<p>this event is created by <em><%= @event.creator.name %></em></p>
+<% unless @event.attendees.empty?%>
+  <p>And here are the attendees for this events:</p>
+  <%@event.attendees.each do | attendee | %>
+    <ul>
+        <li><%= attendee.name %></li>
+    </ul>
+  <% end %>
+<% end %>
+
+<%= link_to 'Back', events_path %>

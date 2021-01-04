@@ -1,24 +1,48 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Private Events
 
-Things you may want to cover:
+> This Application allows you to create and attend events
 
-* Ruby version
+Only logged_in user could attend or create an Event
 
-* System dependencies
+## Built With
 
-* Configuration
+- Ruby
+- Rails 6
+- VScode
 
-* Database creation
 
-* Database initialization
+## Getting Started
+Follow the following steps in order to run this App on your machine:
+- Open your Terminal
+- Navigate to the directory where you will like to install the repo by running cd FOLDER-NAME
+- Run the following command
+      ```
+          git clone https://github.com/tahiry-dev/private-events.git
+      ```
+- Move to the private envents Directory by typing ``` cd private-events ```
+- Type ``` bundle install ``` to install all the necessary gems
+- Type ``` rails db:migrate ``` to migrate your database
+- Type ``` rails s ``` to get the server running
+- Enter http://localhost:3000/ in the browser to get the app running
 
-* How to run the test suite
+## Authors
 
-* Services (job queues, cache servers, search engines, etc.)
+👤 **Tahiry RANDRIAMIARINTSOA**
 
-* Deployment instructions
+- GitHub: [@tahiry](https://github.com/tahiry-dev)
+- Twitter: [@tahiry](https://twitter.com/Tahiry94825074)
+- LinkedIn: [Randriamiarintsoa](https://www.linkedin.com/in/tahiry-randriamiarintsoa/)
 
-* ...
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/tahiry-dev/private-events/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+

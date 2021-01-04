@@ -1,0 +1,9 @@
+
+<%= form_with(url: login_path, scope: :session, local: true) do |f| %>
+<p>
+  <%= f.label :name %><br><br>
+  <%= f.text_field :name, id: :name, placeholder: "your name here" %><br><br>
+  <%= f.submit "Login" %>
+</p>
+<em>New User? create your account <%= link_to 'Here', new_user_path %></em>
+<% end %>
