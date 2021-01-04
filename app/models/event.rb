@@ -4,7 +4,7 @@ class Event < ApplicationRecord
     validates :date, presence: true
     validates :title, presence: true
 
-    has_many :attendances, foreign_key: :attended_event_id
+    has_many :attendances, foreign_key: :attended_event_id, dependent: :destroy
     has_many :attendees, through: :attendances
 
     scope :past, -> { where('date<?', Time.now) }

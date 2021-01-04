@@ -1,0 +1,5 @@
+<%= form_with(model:@attendance, local:true)  do |f| %>
+  <%= f.hidden_field :attendee_id, :value => current_user.id %>
+  <%= f.hidden_field :attended_event_id, :value => event.id %>
+  <%= f.submit "Attend"%>
+<% end %>

@@ -2,10 +2,31 @@
 <% if @events.empty? %>
     <p>Currently, There are no events</p>
 <% else %>
-    
-<% end %>
-<hr>
+    <% if @upcoming_events.empty? %>
+        <p>No future Events to Follow</p>
+    <% else %>
+        <em>Future Events: </em> 
+        <% @upcoming_events.each do | upcoming_event |%>
+            <ul>
+                <li><%= upcoming_event.title %> - <%= link_to 'Find out More', upcoming_event %></li>
+                <%= attending_button(upcoming_event) %>
+                
+            </ul>
+        <% end %>
+    <% end %>
 
+    <em>Past Events: </em>
+    <% @previous_events.each do | previous_event| %>
+        
+        <ul>
+            <li><%= previous_event.title %> - <%= link_to 'Find out More', previous_event %></li>
+            <%= attending_button(previous_event) %>
+            
+        </ul>
+    <% end %>
+<% end %>
+
+<hr>
 
 <% unless logged_in? %>
     <em>You can Create an event by Creating an account <%= link_to 'Here', new_user_path %></em>

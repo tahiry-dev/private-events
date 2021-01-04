@@ -5,7 +5,7 @@
   <% else %>
       <p>here are the list of events you have created</p>
       <% if @upcoming_events.empty? %>
-        <p>There are no Future events Yet</p>
+        <p>**** There are no Future events Yet ****</p>
       <% else %>
           <em>Future Events:</em>
           <ul>
@@ -14,21 +14,26 @@
             <% end %>
           </ul>
       <% end %>
-
-     <% if @previous_events.empty? %>
-        <p>There are no past events</p>
-      <% else %>
-          <em>Past Events:</em>
-          <ul>
-            <% @previous_events.each do | past_eve | %>
-              <li><%= past_eve.title %></li>
-            <% end %>
-          </ul>
-      <% end %>
+        <em>Past Events:</em>
+        <ul>
+          <% @previous_events.each do | past_eve | %>
+            <li><%= past_eve.title %></li>
+          <% end %>
+        </ul>
        
   <% end %>
 
-  <p>You can have a look at other events <%= link_to 'Here', events_path %><br>
+  <% unless @user.attended_events.empty? %>
+    <p>Here are the events you are attending:</p>
+    <% @user.attended_events.each do |event| %>
+      <ul>
+        <li><%= event.title %></li>
+      </ul>
+    <% end %>
+  <% end %>
+  
+  <p>You can have a look at all events <%= link_to 'Here', events_path %><br>
+  <p>You can also create a new event by following this <%= link_to 'Link', new_event_path %>
 <% else %>
     <p>Please create an account <%= link_to 'Here', new_user_path %> first</p>
 <% end %>
