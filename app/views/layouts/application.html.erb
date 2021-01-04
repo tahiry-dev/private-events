@@ -11,12 +11,14 @@
 
   <body>
     <%= link_to 'Home', events_path %> |
-    <%= link_to 'Login', login_path %> |
-    
+
     <% if logged_in? %>
       <%= link_to 'Create an Events', new_event_path %>  |
-      <%= link_to 'Logout', logout_path, method: :delete %>
+      <%= link_to 'Logout', logout_path, method: :delete %> |
+      <%= link_to @current_user.name, user_path(@current_user) %>
+
     <% else %>
+      <%= link_to 'Login', login_path %> |
       <%= link_to 'Create an Acccount', new_user_path %> 
     <% end %>
     <hr>
