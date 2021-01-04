@@ -8,5 +8,5 @@ class Event < ApplicationRecord
   has_many :attendees, through: :attendances
 
   scope :past, -> { where('date<?', Time.now) }
-  scope :future, -> { where('date>?', Time.now) }
+  scope :future, -> { where('date>= ?', Time.zone.now) }
 end

@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(params.require(:user).permit(:name))
     if @user.save
       log_in @user
-      redirect_to @user
+      redirect_to new_event_path
     else
       render :new
     end

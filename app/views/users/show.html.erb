@@ -32,8 +32,7 @@
     <% end %>
   <% end %>
   
-  <p>You can have a look at all events <%= link_to 'Here', events_path %><br>
-  <p>You can also create a new event by following this <%= link_to 'Link', new_event_path %>
+  <em>You can have a look at all events <%= link_to 'Here', events_path %></em><br>
 <% else %>
     <p>Please create an account <%= link_to 'Here', new_user_path %> first</p>
 <% end %>

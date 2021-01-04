@@ -10,13 +10,21 @@
   </head>
 
   <body>
-    <%= link_to 'Home', events_path %><br><br>
+    <%= link_to 'Home', events_path %> |
+    <%= link_to 'Login', login_path %> |
+    
+    <% if logged_in? %>
+      <%= link_to 'Create an Events', new_event_path %>  |
+      <%= link_to 'Logout', logout_path, method: :delete %>
+    <% else %>
+      <%= link_to 'Create an Acccount', new_user_path %> 
+    <% end %>
+    <hr>
+
     <% flash.each do | type, message | %>
       <%= message %>
-    <% end %>
+    <% end %><br><br>
     <%= yield %>
-    <% if logged_in? %>
-      <h6><%= link_to 'Logout', logout_path, method: :delete %></h6>
-    <% end %>
+    
   </body>
 </html>
