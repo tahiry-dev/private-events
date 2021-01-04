@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context 'name is present' do 
+  context 'name is present' do
     it 'should returns true' do
       user = User.new(name: 'John').save
       expect(user).to eq(true)
@@ -21,5 +21,4 @@ RSpec.describe User, type: :model do
       expect(user).to eq(false)
     end
   end
-
 end

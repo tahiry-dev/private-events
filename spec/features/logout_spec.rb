@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Logouts", type: :feature do
+RSpec.feature 'Logouts', type: :feature do
   scenario 'After Logged_in, user can logout' do
     User.create(name: 'Cena')
     visit login_path
