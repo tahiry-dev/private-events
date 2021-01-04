@@ -16,7 +16,6 @@ class EventsController < ApplicationController
    end
   
    def create
-      byebug
       @event = current_user.created_events.build(event_params)
       if @event.save
          flash[:success] = "Your event Has been created"

@@ -5,7 +5,7 @@ RSpec.feature "Signups", type: :feature do
     visit new_user_path
     fill_in :name, with: 'John'
     click_on 'New Account'
-    expect(page).to have_content('welcome to Private Events APP') 
+    expect(page).to have_content('Welcome') 
   end
 
   scenario 'visitors cannot create account with blank name' do
