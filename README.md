@@ -2,7 +2,7 @@
 
 # Private Events
 
-> This Application allow you to create and attend events
+> This Application allows you to create and attend events
 
 Only logged_in user could attend or create an Event
 
